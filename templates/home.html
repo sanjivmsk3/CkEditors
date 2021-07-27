@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'home' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p}}
+    <input type="submit">
+</form>
+
+
+
+{% for foo in post %}
+<p>{{ foo.desc|safe }}</p>
+{% endfor %}
+
+
+</body>
+</html>
